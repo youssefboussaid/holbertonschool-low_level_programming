@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdio.h>
 /**
  * main - Prints the size of various types based on
  *        the computer it is compiled and run on..
@@ -13,6 +12,6 @@ for(ch = 'a' ; ch <= 'z' ; ch++)
 {
 	putchar(ch);
 }
-putchar("\n");
+putchar('\n');
 return (0);
 }
