@@ -5,7 +5,7 @@
  * @a: The pointer to an int.
  * @b: The pointer to an int.
  */
-void swap_int(int *a, int *b);
+void swap_int(int *a, int *b)
 {
 	int c ;
 	c = *a;
