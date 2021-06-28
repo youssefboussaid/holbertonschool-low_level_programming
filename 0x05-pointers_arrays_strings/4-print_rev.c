@@ -2,7 +2,7 @@
 int _strlen(char *s);
 
 /**
- * reverse_array - Reverses the content of an array of integers.
+ * print_rev - print string in reverse
  * @s: the string to be printed 
  */
 void print_rev(char *s)
@@ -10,7 +10,7 @@ void print_rev(char *s)
 	int c;
 	int len = _strlen(s);
 
-	for (c = len-1; c >= 0; c--)
+	for (c = len-1; c >= 0; c-- )
 		_putchar(s[c]);
 	_putchar('\n');
 }
