@@ -1,4 +1,5 @@
 #include "holberton.h"
+int _strlen(char *s);
 
 /**
  * reverse_array - Reverses the content of an array of integers.
@@ -13,4 +14,13 @@ void print_rev(char *s)
 	for (c=len ; c>=0 ;c--)
 		_putchar(s[c]);
 	_putchar('\n');
+}
+
+int _strlen(char *s)
+{
+	int c = 0;
+
+	while (s[c] != '\0')
+	c++;
+	return (c);
 }
