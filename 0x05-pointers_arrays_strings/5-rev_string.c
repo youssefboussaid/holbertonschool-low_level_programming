@@ -1,5 +1,18 @@
 #include "holberton.h"
 int _strlen(char *s);
+void _puts(char *str);
+
+/**
+ *_puts - Write a function that prints a string,
+ *               followed by a new line, to stdout.
+ * @str: pointer to a char
+ */
+void _puts(char *str)
+{
+	while (*str)
+		_putchar(*str++);
+	_putchar('\n');
+}
 
 /**
  * print_rev - print string in reverse
@@ -28,15 +41,4 @@ int _strlen(char *s)
 	while (s[c] != '\0')
 	c++;
 	return (c);
-}
-/**
- *_puts - Write a function that prints a string,
- *               followed by a new line, to stdout.
- * @str: pointer to a char
- */
-void _puts(char *str)
-{
-	while (*str)
-		_putchar(*str++);
-	_putchar('\n');
 }
