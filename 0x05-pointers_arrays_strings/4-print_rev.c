@@ -3,7 +3,7 @@ int _strlen(char *s);
 
 /**
  * print_rev - print string in reverse
- * @s: the string to be printed 
+ * @s: the string to be printedi
  */
 void print_rev(char *s)
 {
@@ -15,6 +15,12 @@ void print_rev(char *s)
 	_putchar('\n');
 }
 
+/**
+ * _strlen - Returns the length of a string.
+ * @s: The string to get the length of.
+ *
+ * Return: The length of @s.
+ */
 int _strlen(char *s)
 {
 	int c = 0;
