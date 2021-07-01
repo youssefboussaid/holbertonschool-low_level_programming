@@ -1,5 +1,4 @@
 #include "holberton.h"
-int _strlen(char *s);
 /**
  * reverse_array - Write a function that concatenates two strings.
  *
