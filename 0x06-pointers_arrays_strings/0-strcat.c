@@ -8,22 +8,15 @@
  * Return: dest+src
  */
 
-char *_strcat(char *dest, char *src)
+char *strcat(char *dest, const char *src)
 {
-	int c, d;
+	int i = 0, dest_len = 0;
 
-	c = 0;
-	while ( dest[c] != '\0')
-	{
-		c++;
-	}
-	d = 0;
-	while (src[d] != '\0')
-	{
-		dest[c] = src[d];
-		d++;
-		c++;
-	}
-		p[c] = '\0';
+	while (dest[i++])
+		dest_len++;
+
+	for (i = 0; src[i]; i++)
+		dest[dest_len++] = src[i];
+
 	return (dest);
 }
