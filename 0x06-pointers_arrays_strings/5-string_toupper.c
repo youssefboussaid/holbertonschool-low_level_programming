@@ -1,18 +1,21 @@
 #include "holberton.h"
 
 /**
- * string_toupper - Reverses a string.
- * @s: The string to b
- * Return : uppercase string
+ * string_toupper - Changes all lowercase letters
+ *                  of a string to uppercase.
+ * @str: The string to be changed.
+ *
+ * Return: A pointer to the changed string.
  */
+
 char *string_toupper(char *str);
 {
 	int i;
-	
-	for (i = 0; *str != '\0' i++)
+
+	for (i = 0; str[i]; i++)
 	{
-	       	if (*str> 'a' && *str <='z)
-			*str = *str - 32;
+		if (str[i] > 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
 	}
-return (*str);
+return (str[i]);
 }
