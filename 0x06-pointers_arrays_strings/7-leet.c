@@ -18,7 +18,7 @@ char *leet(char *str)
 		{
 		      if (str[i] == lett[j]
 				|| str[i] - 32 == lett[j])
-				str[i] = j;
+				str[i] = j + '0';
 		}
 		i++;
 	}
