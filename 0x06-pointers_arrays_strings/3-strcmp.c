@@ -5,7 +5,7 @@
  *
  * @s1:pointer to a cher
  * @s2 : pointer to a char
- * Return: false or true 
+ * Return: false or true
  */
 
 int _strcmp(char *s1, char *s2)
@@ -14,7 +14,7 @@ int _strcmp(char *s1, char *s2)
 
 	while (*s1 != '\0' || *s2 != '\0')
 	{
-		if ( *s1 != *s2)
+		if (*s1 != *s2)
 		{
 			f = 1;
 			break;
@@ -23,7 +23,7 @@ int _strcmp(char *s1, char *s2)
 	s2++;
 	}
 if (f == 0)
-	return 0;
-else 
-	return -1;
+	return (0);
+else
+	return (-1);
 }
