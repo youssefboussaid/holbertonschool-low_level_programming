@@ -4,12 +4,12 @@
  *
  * @a :pointer to an int
  * @n : size of the array
+ * Return: always void 
  */
 
 void reverse_array(int *a, int n)
 {
 	int i = 0;
-	int j;
 	int b;
 
 	while (i < n - 1)
