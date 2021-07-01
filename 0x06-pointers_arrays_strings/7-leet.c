@@ -8,19 +8,19 @@
 
 char *leet(char *str)
 {
-	int i=0;
+	int i = 0;
 	int j;
 	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
 	while (str[i])
 	{
-		for ( j = 0 ; j <=7; j++)
+		for (j = 0; j <= 7; j++)
 		{
-		      if (str[i] == lett[j]
-				|| str[i] - 32 == lett[j])
+			 if (str[i] == lett[j] || str[i] - 32 == lett[j])
 				str[i] = j + '0';
 		}
+
 		i++;
 	}
-	return(str);
+	return (str);
 }
