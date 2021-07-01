@@ -1,0 +1,24 @@
+#include "holberton.h"
+int _strlen(char *s);
+/**
+ * reverse_array - Write a function that concatenates two strings.
+ *
+ * @a :pointer to an int
+ * @n : size of the array
+ */
+
+void reverse_array(int *a, int n)
+{
+	int i = 0;
+	int j;
+	int b;
+
+	while (i < n - 1)
+	{
+		b = a[n - 1];
+		a[n - 1] = a[i];
+		a[i] = b;
+		i++;
+		n--;
+	}
+}
