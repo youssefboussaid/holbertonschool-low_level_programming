@@ -10,13 +10,16 @@
  */
 
 char *_strncpy(char *dest, char *src, int n)
-{  
-	while (*dest != '\0')
+{
+       int dlen = 0;	
+	while (dest[dlen])
 	{
-		*src = * dest ;
-		dest++;
-		src++;
+		dlen++;
 	}
-	*src = '\0';
+	for (i = 0 ; i <= dlen ; i++)
+	{
+		src[i] = dest[i];
+	}	
+	src[dlen] = '\0';
 	retunr (src);
 }
