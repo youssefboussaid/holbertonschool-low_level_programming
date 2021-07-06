@@ -11,5 +11,6 @@ void print_diagsums(int *a, int size);
 char *_strcpy(char *dest, char *src);
 void print_chessboard(char (*a)[8]);
 int _putchar(char c);
+void set_string(char **s, char *to);
 
 #endif   
