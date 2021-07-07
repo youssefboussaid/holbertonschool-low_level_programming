@@ -1,9 +1,8 @@
 #include "holberton.h"
 
 /**
- * _factorial- Returns the factorial of a number
+ * factorial- Returns the factorial of a number
  * @n: an integer
- *
  * Return: the factorial of a number
  */
 int factorial(int n)
