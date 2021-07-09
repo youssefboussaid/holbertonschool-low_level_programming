@@ -1,5 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
  * main - print the program name
  * @argc : the number of argument
@@ -9,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	_putchar("%s", argv[0]);
-	_putchar('\n');
+	putchar("%s", argv[0]);
+	putchar('\n');
 	return (0);
 }
