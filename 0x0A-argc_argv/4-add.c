@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <ctype.h>
 #include <stdio.h>
 #include<stdlib.h>
 /**
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		if (!atoi(argv[i]))
+		if (isdigit(argv[i]) == 0)
 		{
 			printf("Erroe\n");
 			return (1);
