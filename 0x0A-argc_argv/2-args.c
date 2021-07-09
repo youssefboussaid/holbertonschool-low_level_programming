@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0 ; i < argc; i++)
 	{
-		_putchar("%S/n", argv[i]);
+		_putchar("%s/n", argv[i]);
 	}
 	return (0);
 }
