@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
 	int i;
 	int mul;
 
+	(void) argc;
+	(void) argv;
 	if (argc == 3)
 	{
 		mul = atoi(argv[1]) * atoi(argv[2]);
