@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
 * main - prints the number of argument
 * @argc: the number of argument
@@ -9,6 +9,6 @@
 
 int main(int argc, char *argv[])
 {
-	_putchar("%d/n", argc);
+	printf("%d/n", argc);
 	return (0);
 }
