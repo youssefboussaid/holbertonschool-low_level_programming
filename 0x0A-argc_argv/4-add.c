@@ -7,11 +7,9 @@
  * @argv : an arry of the argument
  * Return: 0 or 1
  */
-
 int main(int argc, char *argv[])
 {
-	int i, j;
-	int sum = 0;
+	int a = 0, i, j;
 
 	for (i = 1; i < argc; i++)
 	{
@@ -19,15 +17,15 @@ int main(int argc, char *argv[])
 		{
 			if (isdigit(argv[i][j]) == 0)
 			{
-			printf("Erroe\n");
-			return (1);
+				puts("Error");
+				return (1);
 			}
 		}
 	}
 	for (i = 1; i < argc; i++)
-	{	
-	sum += atoi(argv[i]);
+	{
+		a += atoi(argv[i]);
 	}
-	printf("%d\n", sum);
+	printf("%d\n", a);
 	return (0);
 }
