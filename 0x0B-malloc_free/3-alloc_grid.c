@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * aloc_grid- create a 2 dimensional array of int
+ * alloc_grid - allocates memory for a 2D array of ints
  *
- * @width: the width of the array
- * @height: the height of the array
+ * @width: number of    columns   for 2D array
+ * @height: number of   rows      for 2D array
  *
- * Return: pointer to the 2 dimensional array
+ * Return: pointer to a 2D array, NULL on error
  */
 
 int **alloc_grid(int width, int height)
 {
-    return (malloc(width * height * sizeof(int)));
+	return (malloc(width * height * sizeof(int)));
 }
