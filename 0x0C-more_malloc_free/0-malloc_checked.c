@@ -1,8 +1,9 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * malloc_checked - allocates memory using malloc 
+ * malloc_checked - allocates memory using malloc
  * @b : number of bytes to be reserved
  *
  * Return: return a pointer
