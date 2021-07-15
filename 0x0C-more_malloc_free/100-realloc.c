@@ -1,4 +1,7 @@
-#include "bootcamp.h"
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
  * _realloc - reallocates a memory block using malloc and free
  * @ptr: pointer to reallocate memory
