@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "holberton.h"
 /**
- * str_concat - concatenates two string
+ * string_nconcat - concatenates two string
  *
  * @s1 : string 1
  * @s2 : string 2
@@ -13,7 +13,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *p;
-	int i, j = 0, len1 = 0 , len2 = 0;
+	int i, j = 0, len1 = 0, len2 = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -29,7 +29,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (n >= len2)
 		p = malloc(sizeof(char) * (len1 + len2 + 1));
-	else 
+	else
 		p = malloc(sizeof(char) * (len1 + n + 1));
 	if (p == NULL)
 		return (NULL);
