@@ -1,25 +1,21 @@
-#ifndef VARIADIC_FUNCTIONS_H
-#define VARIADIC_FUNCTIONS_H
-
-#include <stdio.h>
-#include <stdlib.h>
-
+#ifndef _VAR_FUNCS_
+#define _VAR_FUNCS_
+#include <stdarg.h>
 /**
- * struct datatype - Struct datatype
+ * struct print_convert_variable - structure to hold function and char key
+ * @type: abbreviation for type, i=int, c=char, f=float, s=string
+ * @f: pointer to function for proper print statement
  *
- * @type: The type of argument
- * @func: The function pointer to the print function
+ * Description: key:value, char:function, e.g: 'c':_print_char
  */
-typedef struct datatype
+typedef struct print_convert_variable
 {
-	char *type;
-	void (*func)(va_list list);
-}data_t;
-
+	char type;
+	void (*f)(va_list *);
+} conv_t;
 int sum_them_all(const unsigned int n, ...);
-void print_numbers(const char *separator, const unsigned int n, ...);
-void print_strings(const char *separator, const unsigned int n, ...);
+void print_numbers(const char *seperator, const unsigned int n, ...);
+void print_strings(const char *seperator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
-int _putchar(char c);
-
-#endif /* VARIADIC_FUNCTIONS_H */
+int _putchar(int);
+#endif
