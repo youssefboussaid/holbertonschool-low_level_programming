@@ -1,83 +1,98 @@
+#include <stdio.h>
 #include "variadic_functions.h"
-#include <stdarg.h>
+void _print_char(va_list *args);
+void _print_integer(va_list *args);
+void _print_float(va_list *args);
+void _print_string(va_list *args);
 /**
- * _charp - prints a character
- * @list: argument pointer variable, character to print
- */
-void _charp(va_list list)
-{
-	printf("%c", va_arg(list, int));
-}
-/**
- * _intp - prints an integer
- * @list: argument pointer variable, integer to print
- */
-void _intp(va_list list)
-{
-	printf("%d", va_arg(list, int));
-}
-/**
- * _floatp - prints a float
- * @list: argument pointer variable, float to print
- */
-void _floatp(va_list list)
-{
-	printf("%f", va_arg(list, double));
-}
-/**
- * _stringp - prints a string
- * @list: argument pointer variable, string to print
- */
-void _stringp(va_list list)
-{
-	char *s;
-
-	s = va_arg(list, char*);
-	if (s == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-		printf("%s", s);
-}
-
-
-/**
- * print_all - prints anything
- * @format: list of types of arguments passed to the function
+ * print_all - prints all parameters passed variadiclly
+ * @format: string with types of variables, in order
+ * @...: variables to print out
+ *
+ * Return: always void
  */
 void print_all(const char * const format, ...)
 {
-	data_t types[] = {
-		{"c", _charp},
-		{"i", _intp},
-		{"f", _floatp},
-		{"s", _stringp},
-		{NULL, NULL}
+	va_list args;
+	unsigned int i = 0;
+	int n = 0;
+	char *seperator = "";
+	conv_t convs[] = {
+		{ 'c', _print_char },
+		{ 'i', _print_integer },
+		{ 'f', _print_float },
+		{ 's', _print_string },
+		{ 0, NULL }
 	};
-	int i = 0;
-	int j = 0;
-	va_list list;
-	char *separator = "";
 
-	va_start(list, format);
-
-	while (format != NULL && format[i])
+	va_start(args, format);
+	while (format && (*(format + i)))
 	{
-		j = 0;
-		while (types[j].type)
+		n = 0;
+		while (convs[n].f != NULL && convs[n].type != *(format + i))
+			n++;
+		if (convs[n].f != NULL)
 		{
-			if (format[i] == *types[j].type)
-			{
-				printf("%s", separator);
-				types[j].func(list);
-				separator = ", ";
-			}
-			j++;
+			printf("%s", seperator);
+			convs[n].f(&args);
+			seperator = ", ";
 		}
 		i++;
 	}
-	printf("\n");
-	va_end(list);
+	va_end(args);
+	putchar('\n');
+}
+/**
+ * _print_char - prints a character
+ * @args: va_list to get character from, presumed to be type of arg
+ *
+ * Return: always void
+ */
+void _print_char(va_list *args)
+{
+	char ch;
 
+	ch = va_arg(*args, int);
+	printf("%c", ch);
+}
+/**
+ * _print_integer - prints an integer
+ * @args: va_list to get integer from, presumed to be type of arg
+ *
+ * Return: always void
+ */
+void _print_integer(va_list *args)
+{
+	int i;
+
+	i = va_arg(*args, int);
+	printf("%d", i);
+}
+/**
+ * _print_float - prints a float
+ * @args: va_list to get float from, presumed to be type of arg
+ *
+ * Return: always void
+ */
+void _print_float(va_list *args)
+{
+	float f;
+
+	f = va_arg(*args, double);
+	printf("%f", f);
+}
+/**
+ * _print_string - prints a string
+ * @args: va_list to get char * from, presumed to be type of arg
+ *
+ * Return: always void
+ */
+void _print_string(va_list *args)
+{
+	char *str;
+
+	str = va_arg(*args, char *);
+	if (str == NULL || *str == '\0')
+		str = "(nil)";
+	printf("%s", str);
 }
