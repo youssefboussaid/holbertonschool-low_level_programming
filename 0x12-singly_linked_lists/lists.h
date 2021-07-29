@@ -1,6 +1,7 @@
-#ifndef _LIST_H
-#define _list_H
+#ifndef _LISTS_H
+#define _LISTS_H
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct list_s
 {
