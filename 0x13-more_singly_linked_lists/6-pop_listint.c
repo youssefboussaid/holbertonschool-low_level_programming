@@ -5,7 +5,7 @@
   * pop_listint - pop the head of a struct and retune it's balue
   * @head: double pointer of a struct
   *
-  * Return:
+  * Return: the head node's data
   */
 
 int pop_listint(listint_t **head)
